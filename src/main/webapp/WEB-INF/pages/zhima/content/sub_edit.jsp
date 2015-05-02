@@ -1,6 +1,7 @@
 <%@page pageEncoding="UTF-8"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
+<script type="text/javascript" src="${pageContext.request.contextPath}/webresource/plugins/jquery/jquery.hotkeys.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/webresource/plugins/jquery/bootstrap-wysiwyg.js"></script>
 <script type="text/javascript">
 $(function(){
