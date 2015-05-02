@@ -5,6 +5,11 @@
 <html lang="zh" xmlns:wb="http://open.weibo.com/wb">
 <head>
 <jsp:include page="../common/include.jsp"/>
+<script type="text/javascript">
+$(function(){
+	ZM.navigate.init();
+});
+</script>
 </head>
 
 <body>

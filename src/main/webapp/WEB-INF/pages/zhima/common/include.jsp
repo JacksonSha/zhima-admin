@@ -11,5 +11,6 @@
 
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/webresource/plugins/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/webresource/css/zhima.admin.css" />
-<script type="text/javascript" src="${pageContext.request.contextPath}/webresource/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/webresource/plugins/jquery/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/webresource/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/webresource/js/zhima.main.js"></script>

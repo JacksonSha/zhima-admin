@@ -85,6 +85,8 @@ h6 {
 .sidebar-nav {
 	position: fixed;
 	background: #FFFFFF;
+	left: 0px;
+	z-index: 1;
 	height: 100%;
 	width: 160px;
 	border-right: 1px #BEBEBE solid;
@@ -97,6 +99,15 @@ h6 {
 
 .sidebar-container {
 	margin-left: 160px;
+}
+
+@media (max-width: 767px){
+	.sidebar-nav {
+		left: -160px;
+	}
+	.sidebar-container {
+		margin-left: 0px;
+	}
 }
 
 .dropdown-menu {
@@ -211,14 +222,6 @@ h6 {
 
 /* Content and Main Elements
 =================================================================== */
-#content {
-	background: #ffffff;
-	filter: none;
-	min-height: 100%;
-	padding: 20px 20px;
-	position: relative;
-}
-
 .breadcrumb {
 	margin: 0px -15px;
 	line-height: 34px;
@@ -282,4 +285,10 @@ h6 {
 .the-icons {
 	padding: 0;
 	list-style: none;
+}
+
+#editor {
+	overflow: scroll;
+	min-height: 300px;
+	max-height: 600px;
 }
