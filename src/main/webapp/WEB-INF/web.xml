@@ -4,7 +4,7 @@
 	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
 	version="2.4">
-	<display-name>zhima</display-name>
+	<display-name>zhimaAdmin</display-name>
 
 	<servlet>
 		<servlet-name>mvc-dispatcher</servlet-name>
@@ -51,13 +51,17 @@
 	</context-param>
 	<context-param>
 		<param-name>webAppRootKey</param-name>
-		<param-value>zhima.root</param-value>
+		<param-value>zhimaAdmin.root</param-value>
 	</context-param>
 
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/WEB-INF/pages/zhima/error/500.jsp</location>
+	</error-page>
 	<error-page>
 		<error-code>401</error-code>
 		<location>/WEB-INF/pages/zhima/error/401.jsp</location>
