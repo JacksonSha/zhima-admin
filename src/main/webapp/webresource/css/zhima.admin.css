@@ -76,6 +76,9 @@ h6 {
 	background-color: white;
 	border-bottom: 1px #535353 solid;
 }
+.navbar-toggle .icon-bar {
+	background-color: #000;
+}
 
 /* Navigation Section
 =================================================================== */
@@ -279,4 +282,19 @@ h6 {
 
 .form-actions:after {
  	clear: both;
+}
+
+/*Icons
+=================================================================== */
+.panel-title {
+	float: left;
+}
+
+.box-icon {
+	float: right;
+}
+
+.the-icons {
+	padding: 0;
+	list-style: none;
 }
