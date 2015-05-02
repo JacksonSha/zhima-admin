@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.stang.tang.zhima.mapper.CommentMapper">
+	<resultMap id="BaseResultMap" type="comment">
+		<id column="CMT_ID" property="id" jdbcType="INTEGER" />
+		<result column="CMT_USR_ID" property="userId" jdbcType="INTEGER" />
+		<result column="CMT_ART_ID" property="articleId" jdbcType="INTEGER" />
+		<result column="CMT_CONTENT" property="content" jdbcType="VARCHAR" />
+		<result column="CMT_CREATE_DT" property="createDt" jdbcType="DATE" />  
+	</resultMap>
+
+	<sql id="ColumnList">
+		CMT_ID,CMT_USR_ID,CMT_ART_ID,CMT_CONTENT,CMT_CREATE_DT
+	</sql>
+
+</mapper>

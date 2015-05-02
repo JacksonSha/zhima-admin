@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.stang.tang.zhima.mapper.TagMapper">
+	<resultMap id="BaseResultMap" type="tag">
+		<id column="TAG_ID" property="id" jdbcType="INTEGER" />
+		<result column="TAG_NAME" property="name" jdbcType="VARCHAR" />
+		<result column="TAG_DESC" property="desc" jdbcType="VARCHAR" />
+		<result column="TAG_CREATE_DT" property="createDt" jdbcType="DATE" />
+	</resultMap>
+
+	<sql id="ColumnList">
+		TAG_ID,TAG_NAME,TAG_DESC,TAG_CREATE_DT
+	</sql>
+
+</mapper>

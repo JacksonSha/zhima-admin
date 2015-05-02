@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.stang.tang.zhima.mapper.AdminMapper">
+	<resultMap id="BaseResultMap" type="admin">
+		<id column="ADM_ID" property="id" jdbcType="INTEGER" />
+		<result column="ADM_NAME" property="name" jdbcType="VARCHAR" />
+		<result column="ADM_EMAIL" property="email" jdbcType="VARCHAR" />
+		<result column="ADM_PASSWORD" property="password" jdbcType="VARCHAR" />
+		<result column="ADM_BLOG" property="blog" jdbcType="VARCHAR" />  
+		<result column="ADM_QQ" property="qq" jdbcType="VARCHAR" />
+		<result column="ADM_WEIXIN" property="weixin" jdbcType="VARCHAR" />
+		<result column="ADM_WEIBO" property="weibo" jdbcType="VARCHAR" />
+		<result column="ADM_GITHUB" property="github" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="ColumnList">
+		ADM_ID,ADM_NAME,ADM_PASSWORD,ADM_EMAIL,ADM_BLOG,ADM_QQ,ADM_WEIXIN,ADM_WEIBO,ADM_GITHUB
+	</sql>
+
+	<select id="loginAdmin"  parameterType="INTEGER" resultMap="BaseResultMap">
+		select * from S_ADMIN where (ADM_NAME=#{login} OR ADM_EMAIL=#{login}) AND ADM_PASSWORD=#{password}
+	</select>
+	
+	<update id="updateAdmin"  parameterType="admin">
+		update S_ADMIN
+		set ADM_NAME=#{name},
+		ADM_EMAIL=#{email},
+		ADM_PASSWORD=#{password},
+		ADM_BLOG=#{blog},
+		ADM_QQ=#{qq},
+		ADM_WEIXIN=#{weixin},
+		ADM_WEIBO=#{weibo},
+		ADM_GITHUB=#{github}
+		where ADM_ID=#{id},
+	</update>
+
+</mapper>
