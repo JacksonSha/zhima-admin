@@ -7,6 +7,29 @@
 <jsp:include page="../common/include.jsp"/>
 <script type="text/javascript">
 $(function(){
+	console.log(document.querySelector("header"));
+	var headroom = new Headroom(document.querySelector("header"),{
+		  "tolerance": 5,
+		  "offset": 10,
+		  "classes": {
+		    "initial": "animated",
+		    "pinned": "slideInDown",
+		    "unpinned": "slideOutUp"
+		  }
+	});
+	//headroom.init();
+	var sidebar = new Headroom(document.querySelector(".sidebar-nav"),{
+		  "tolerance": 5,
+		  "offset": 10,
+		  "classes": {
+		    "initial": "animated",
+		    "pinned": "fadeInLeft",
+		    "unpinned": "fadeOutLeft"
+		    //"pinned": "slideInLeft",
+		    //"unpinned": "slideOutLeft"
+		  }
+	});
+	//sidebar.init();
 	ZM.navigate.init();
 });
 </script>

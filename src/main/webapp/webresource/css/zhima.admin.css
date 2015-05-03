@@ -287,6 +287,8 @@ h6 {
 	list-style: none;
 }
 
+/*Edit
+=================================================================== */
 #editor {
 	overflow: scroll;
 	min-height: 300px;
