@@ -19,10 +19,45 @@
 	</resultMap>
 
 	<sql id="ColumnList">
-	ART_ID,ART_ADM_ID,ART_TAG_ID,ART_AUTHOR,ART_TITLE,ART_HEADIMG,
+	ART_ADM_ID,ART_TAG_ID,ART_AUTHOR,ART_TITLE,ART_HEADIMG,
 	ART_CLICK_NUM,ART_LIKE_NUM,ART_COMMENT_NUM,
-	ART_CONTENT_DESC,ART_CONTENT_TEXT,ART_CONTENT_HTML,ART_CREATE_DT,ART_UPDATE_DT
+	ART_CONTENT_DESC,ART_CREATE_DT,ART_UPDATE_DT
 	</sql>
+
+	<insert id="createArticle" parameterType="article"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into 
+		BARTICLE(<include refid="ColumnList" />)
+		values
+		(#{adminId},#{tagId},#{author},#{title},#{headImg},
+		#{clickNum},#{likeNum},#{commentNum},
+		#{contentDesc},#{createDt},#{updateDt})
+	</insert>
+
+	<insert id="createXArticle" parameterType="article"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into 
+		XARTICLE(ART_ID,ART_CONTENT_TEXT,ART_CONTENT_HTML)
+		values
+		(#{id},#{contentText},#{contentHtml})
+	</insert>
+
+	<update id="updateArticle" parameterType="article">
+		update BARTICLE
+		set
+		ART_ADM_ID=#{adminId},
+		ART_TAG_ID=#{tagId},
+		ART_AUTHOR=#{author},
+		ART_TITLE=#{title},
+		ART_HEADIMG=#{headImg},
+		ART_CLICK_NUM=#{clickNum},
+		ART_LIKE_NUM=#{likeNum},
+		ART_COMMENT_NUM=#{commentNum},
+		ART_CONTENT_DESC=#{contentDesc},
+		ART_CREATE_DT=#{createDt},
+		ART_UPDATE_DT=#{updateDt}
+		where ART_ID= #{id,jdbcType=INTEGER}
+	</update>
 
 	<select id="getArticleById" parameterType="java.lang.Integer"
 		resultMap="BaseResultMap">

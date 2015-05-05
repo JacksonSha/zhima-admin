@@ -8,9 +8,14 @@ import com.stang.tang.zhima.entity.Article;
 
 public interface ArticleMapper {
 
-//	public void createArticle(Article article);
-//
-//	public void updateArticle(Article article);
+	public void createArticle(Article article);
+
+	public void createXArticle(Article article);
+
+	public Integer updateArticle(Article article);
+
+	public Integer updateXArticle(Article article);
+
 //
 //	public List<Article> getAllArticles();
 //

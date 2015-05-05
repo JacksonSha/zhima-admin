@@ -6,9 +6,11 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.stang.tang.zhima.service.ArticleService;
 
 public class BaseController {
 	protected static Gson gson = new GsonBuilder().setDateFormat(
@@ -22,8 +24,10 @@ public class BaseController {
 	public static final String P_JSON = "application/json;charset=UTF-8";
 	public static final String P_TEXT = "text/plain;charset=UTF-8";
 
-	private static final Logger LOGGER = LoggerFactory
-			.getLogger(BaseController.class);
+	@Autowired
+	protected ArticleService articleService;
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(BaseController.class);
 
 	protected String getHostUrl(HttpServletRequest request) {
 		HttpSession session = request.getSession();

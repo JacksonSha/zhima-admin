@@ -5,7 +5,28 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/webresource/plugins/jquery/bootstrap-wysiwyg.js"></script>
 <script type="text/javascript">
 $(function(){
+	var rootUrl = "${pageContext.request.contextPath}";
 	$('#editor').wysiwyg();
+	$(".save-article").click(function(){
+		//console.log($('#editor').cleanHtml());
+		//console.log($("<div/>").text($('#editor').cleanHtml()).html());
+		var html = $("<div/>").text($('#editor').cleanHtml()).html();
+		$.ajax({
+			url : rootUrl+'/opt/article/save',
+			contentType: "application/json",
+			data : JSON.stringify({
+				title: '微博之初----000000001',
+				headImg: 'http://localhost/xx',
+				contentDesc: html.substring(0,30),
+				contentText: html,
+				contentHtml: $('#editor').html()
+			}),
+			type : "POST",
+			success : function (resp) {
+				console.log(resp);
+			}
+		});
+	});
 });
 </script>
 
@@ -23,8 +44,7 @@ $(function(){
 <div class="row">
 	<div class="panel panel-default">
 	  <div class="panel-heading">
-	  	<h2 class="panel-title">
-	  	
+	  	<div class="panel-title">
 	<div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
       <div class="btn-group">
         <a class="btn dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font"><i class="icon-font"></i><b class="caret"></b></a>
@@ -74,9 +94,9 @@ $(function(){
         <a class="btn" data-edit="undo" title="" data-original-title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
         <a class="btn" data-edit="redo" title="" data-original-title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
       </div>
-      <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="" style="display: none;">
+      <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="" style="display: none;"/>
     </div>
-	  	</h2>
+	  	</div>
 		<div class="clearfix"></div>
 	  </div>
 	  <div class="panel-body">
@@ -87,5 +107,7 @@ $(function(){
 			    </div>
 			</div>
 		</div>
-		</div>
+	  </div>
+	</div>
+	<button class="btn btn-default save-article" type="button">Save</button>
 </div>

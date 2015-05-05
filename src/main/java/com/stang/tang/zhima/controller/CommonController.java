@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.stang.tang.zhima.entity.Article;
 
 @Controller
-@RequestMapping("/article")
-public class ArticleController extends BaseController {
+@RequestMapping("/r")
+public class CommonController extends BaseController {
 	private static final Logger LOGGER = LoggerFactory
-			.getLogger(ArticleController.class);
+			.getLogger(CommonController.class);
 
 	@ResponseBody
 	@RequestMapping(value = "/list/{page}", produces = P_JSON)
